@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Emlak Şirketi - Şirketinizin Adı</title>
+</head>
+<body>
+    
+    <header>
+        <div class="menu-icon" id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <h1>COLDWELL BANKVER VIA</h1>
+        
+    </header>
+
+    <nav class="menu">
+        
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul>
+            <li><a href="#" data-section="turkiye">Türkiye</a></li>
+            <li><a href="#" data-section="kibris">Kıbrıs</a></li>
+            <li><a href="#" data-section="amerika">Amerika</a></li>
+            <li><button id="eklenen-projeler-btn">Eklenen Projeleri Görüntüle</button></li>
+
+        </ul>
+    </nav>
+    <!-- Proje Ekle düğmesi (sağ altta) -->
+    <button id="ekle-proje" class="add-project-btn">
+        <i class="fas fa-plus"></i>
+    </button>
+
+    <!-- Proje Ekleme Formu (Pop-up) -->
+    <!-- Proje Ekleme Formu (Pop-up) -->
+<div id="proje-ekle-popup" class="project-popup">
+    <div class="project-popup-content">
+        <span id="kapat-popup" class="close-popup">&times;</span>
+        <h3>Proje Ekle</h3>
+        <form id="proje-ekleme-formu">
+            <label for="proje-resim">Proje Resmi:</label>
+            <input type="file" id="proje-resim" name="proje-resim" accept="image/*" required>
+            <label for="proje-baslik">Başlık:</label>
+            <input type="text" id="proje-baslik" name="proje-baslik" required>
+            <label for="proje-oda-sayisi">Oda Sayısı:</label>
+            <input type="text" id="proje-oda-sayisi" name="proje-oda-sayisi" required>
+            <label for="proje-fiyat">Fiyat:</label>
+            <input type="text" id="proje-fiyat" name="proje-fiyat" required>
+            <button type="submit">Proje Ekle</button>
+        </form>
+    </div>
+</div>
+<div id="turkiye-projeleri" class="proje-kategori">
+   
+    <div class="proje-listesi">
+        <!-- Türkiye projeleri burada listelenecek -->
+    </div>
+</div>
+
+<div id="amerika-projeleri" class="proje-kategori">
+    
+    <div class="proje-listesi">
+        <!-- Amerika projeleri burada listelenecek -->
+    </div>
+</div>
+
+<div id="kibris-projeleri" class="proje-kategori">
+    
+    <div class="proje-listesi">
+        <!-- Kıbrıs projeleri burada listelenecek -->
+    </div>
+</div>
+
+
+    <div id="proje-detay" class="project-detail">
+        <div class="project-detail-content">
+            <img id="detay-resim" src="" alt="Proje Resmi">
+            <h2 id="detay-baslik">Proje Adı</h2>
+            <p id="detay-aciklama">Açıklama Proje 1</p>
+            <p id="detay-oda-sayisi">Oda Sayısı: 3</p>
+            <p id="detay-metrekare">Metrekare: 120 m²</p>
+            <p id="detay-adres">Adres: Örnek Sokak, Örnek Mahalle</p>
+            <p id="detay-fiyat">Fiyat: $100,000</p>
+            <button id="kapat-detay">Detayı Kapat</button>
+        </div>
+    </div>
+
+    <!-- Türkiye projeleri -->
+    <div id="turkiye" class="project-section active">
+        <h2>Türkiye Projeleri</h2>
+        <main class="advertisements">
+            <div class="advertisement">
+                <img src="turkiye1.jpg" alt="Türkiye Proje 1">
+                <p>Açıklama Türkiye Proje 1</p>
+                <button class="detay-goster" data-proje="turkiye1" data-oda-sayisi="3" data-metrekare="120" data-adres="Örnek Sokak, Türkiye" data-fiyat="$100,000">Detay Göster</button>
+            </div>
+            <!-- Diğer Türkiye projelerini buraya ekleyin -->
+        </main>
+        <div class="sort">
+            <label for="turkiye-sort">Fiyata Göre Sırala:</label>
+            <select id="turkiye-sort">
+                <option value="artan">Artan Fiyat</option>
+                <option value="azalan">Azalan Fiyat</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Kıbrıs projeleri -->
+    <div id="kibris" class="project-section">
+        <h2>Kıbrıs Projeleri</h2>
+        <main class="advertisements">
+            <div class="advertisement">
+                <img src="kibris1.jpg" alt="Kıbrıs Proje 1">
+                <p>Açıklama Kıbrıs Proje 1</p>
+                <button class="detay-goster" data-proje="kibris1" data-oda-sayisi="4" data-metrekare="150" data-adres="Örnek Sokak, Kıbrıs" data-fiyat="$120,000">Detay Göster</button>
+            </div>
+            <!-- Diğer Kıbrıs projelerini buraya ekleyin -->
+        </main>
+        <div class="sort">
+            <label for="kibris-sort">Fiyata Göre Sırala:</label>
+            <select id="kibris-sort">
+                <option value="artan">Artan Fiyat</option>
+                <option value="azalan">Azalan Fiyat</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Amerika projeleri -->
+    <div id="amerika" class="project-section">
+        <h2>Amerika Projeleri</h2>
+        <main class="advertisements">
+            <div class="advertisement">
+                <img src="amerika1.jpg" alt="Amerika Proje 1">
+                <p>Açıklama Amerika Proje 1</p>
+                <button class="detay-goster" data-proje="amerika1" data-oda-sayisi="2" data-metrekare="110" data-adres="Örnek Sokak, Amerika" data-fiyat="$150,000">Detay Göster</button>
+            </div>
+            <!-- Diğer Amerika projelerini buraya ekleyin -->
+        </main>
+        <div class="sort">
+            <label for="amerika-sort">Fiyata Göre Sırala:</label>
+            <select id="amerika-sort">
+                <option value="artan">Artan Fiyat</option>
+                <option value="azalan">Azalan Fiyat</option>
+            </select>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

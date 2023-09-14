@@ -1,0 +1,297 @@
+/* Temel Stil */
+body {
+    background-color: #f2f2f2; /* Yeni arka plan rengi */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-image: url('arka-plan-resmi.jpg'); /* Başlık arka plan resmi */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-end; /* Menüyü sağa hizala */
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu li {
+    display: inline;
+    margin-left: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #ff6600; /* Hover rengi */
+}
+
+.project-section {
+    display: none;
+    padding: 50px;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.project-section.active {
+    display: block;
+}
+
+.sort {
+    margin-top: 20px;
+}
+
+.sort label {
+    font-weight: bold;
+}
+
+.sort select {
+    padding: 5px;
+    font-size: 16px;
+}
+
+.advertisements {
+    display: flex;
+    overflow: hidden;
+}
+
+.advertisement {
+    flex: 0 0 33.33%;
+    padding: 100px;
+    text-align: center;
+    animation: scrollAdvertisement 20s linear infinite;
+    cursor: pointer; /* Projeye tıklanabilir yapmak için */
+}
+
+@keyframes scrollAdvertisement {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.advertisement img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Yeni Eklenen Stil */
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.dropdown ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.dropdown li {
+    padding: 10px;
+    text-align: center;
+}
+
+.dropdown a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.dropdown a:hover {
+    color: #ff6600; /* Hover rengi */
+}
+
+.menu-icon,
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1100;
+    margin-top: 25px;
+    margin-right: 20px;
+    align-self: flex-end;
+}
+
+.menu-icon .bar,
+.menu-toggle .bar {
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.menu-icon.active .bar:nth-child(1),
+.menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-icon.active .bar:nth-child(2),
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon.active .bar:nth-child(3),
+.menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Proje detay sayfası stilini tanımla */
+.project-detail {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Saydamlık ekler */
+    justify-content: center;
+    align-items: center;
+    z-index: 1001; /* Üstte görünmesini sağlar */
+}
+
+.project-detail-content {
+    background-color: #fff;
+    padding: 20px;
+    max-width: 80%;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.project-detail img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Detay sayfasını kapat butonu stilini tanımla */
+#kapat-detay {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Detay göster butonu stilini tanımla */
+.detay-goster {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.detay-goster:hover {
+    background-color: #ff3300;
+}
+
+/* ... (Önceki stil kodları) */
+
+/* Proje Ekle düğmesi stilini tanımla */
+.add-project-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* Proje Ekleme Formu (Pop-up) stilini tanımla */
+.project-popup {
+    display: none ;
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Saydamlık ekler */
+    justify-content: center;
+    align-items: center;
+    z-index: 10012; /* Üstte görünmesini sağlar */
+}
+
+.project-popup-content {
+    background-color: #fff;
+    padding: 20px;
+    max-width: 80%;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.project-popup h3 {
+    margin-top: 0;
+}
+
+.project-popup form {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-popup label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.project-popup input[type="file"] {
+    padding: 5px;
+}
+
+.project-popup input[type="text"] {
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.project-popup button[type="submit"] {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
